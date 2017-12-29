@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 print('我是下位子ddd')
+print('a', 'bv')
 
 print(ord('A'))
 print(ord('D'))
