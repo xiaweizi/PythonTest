@@ -7,6 +7,10 @@
 	sudo vim ~/.bash_profile //修改本地的环境变量
 	echo $PATH // 查看本地的环境变量
 	source ~/.bash_profile // 让刚刚设置的环境变量生效
+
+使用中文添加的配置
+
+	# -*- coding: utf-8 -*-
 	
 ## 数据类型
 
@@ -92,3 +96,121 @@ t = ('Adam', 'Lisa', 'Bart')
 
 	t = (1,)
 	t = ('Adam',)
+	
+## 逻辑语句
+
+**if elif else**
+
+计算机之所以能做很多自动化的任务，因为它可以自己做条件的判断。
+
+> 注： Python 代码的缩进规则。具有相同缩进的代码被视为代码块。
+> if 语句后接表达式，然后用 : 表示代码开始
+
+	score = 85
+	
+	if score>=90:
+	    print 'excellent'
+	elif score>=80:
+	    print 'good'
+	elif score>=60:
+	    print 'passed'
+	else:
+	    print 'failed'
+
+**for**
+
+	L = [75, 92, 59, 68]
+	sum = 0.0
+	for value in L:
+	    sum += value
+	print sum / 4
+	
+**while**
+
+计算 1 + 2 + 4 + 8 + 16 + ... 的前20项的和。
+
+	sum = 0
+	x = 1
+	n = 1
+	while True:
+	    sum += x
+	    x *= 2
+	    n += 1
+	    if n >20:
+	        break
+	print sum
+
+0-100 只计算奇数的值
+
+	sum = 0
+	x = 0
+	while True:
+	    x = x + 1
+	    if x > 100:
+	        break
+	    if x % 2 == 0:
+	        continue
+	    sum += x
+	print sum
+
+**多重循环**
+
+1-100 十位数比各位数小的数
+
+	for x in [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]:
+	    for y in [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]:
+	        if x < y:
+	            print x * 10 + y
+
+## dict
+
+从字名可以理解为「字典」，类似于`java`中的`map`，是以键值对的方式存储。
+
+dict的第一个特点是**查找速度快**，无论dict有10个元素还是10万个元素，查找速度都一样。而list的查找速度随着元素增加而逐渐下降。
+
+不过dict的查找速度快不是没有代价的，dict的缺点是占用内存大，还会浪费很多内容，list正好相反，占用内存小，但是查找速度慢。
+
+由于dict是按 key 查找，所以，在一个dict中，**key不能重复**。
+
+dict的第二个特点就是存储的key-value序对是**没有顺序**的！这和list不一样：
+
+dict的第三个特点是作为 key 的元素必须**不可变**，Python的基本类型如字符串、整数、浮点数都是不可变的，都可以作为 key。但是list是可变的，就不能作为 key。
+
+命名方式
+
+	d = {
+	    'Adam': 95,
+	    'Lisa': 85,
+	    'Bart': 59
+	}
+	
+**查询** `d['Adam']`、`d.get('Adam')`,在取值的时候最好需要判断一下: 'Adam' in d.
+
+**修改** `d['Adam'] = 32`
+
+**增加** `d['Weizi'] = 32`
+
+**删除** `d.pop('Adam')`、`del(d['Adam'])`
+
+## set
+
+dict的作用是建立一组 key 和一组 value 的映射关系，dict的key是不能重复的。
+
+有的时候，我们只想要 dict 的 key，不关心 key 对应的 value，目的就是保证这个集合的元素不会重复，这时，set就派上用场了。
+
+set 持有一系列元素，这一点和 list 很像，但是set的元素没有重复，而且是无序的，这点和 dict 的 key很像。
+
+set的内部结构和dict很像，唯一区别是不存储value，因此，判断一个元素是否在set中速度很快。
+
+set存储的元素和dict的key类似，必须是不变对象，因此，任何可变对象是不能放入set中的。
+
+命名方式：
+
+	s = set(['A', 'B', 'C'])
+
+**查询** 由于set存储的是无序集合，所以我们没法通过索引来访问。访问 set中的某个元素实际上就是判断一个元素是否在set中。`'Bart' in s`。
+
+**增加** `s.add(1)`
+
+**删除** `s.remove(1)`
+
