@@ -20,7 +20,7 @@ for num in range(101):
 print(sum)
 
 # While
-sum = 0 
+sum = 0
 n = 0
 while n <= 100:
 	sum += n
@@ -34,4 +34,3 @@ while n <= 10:
 	if n % 2 == 0:
 		print(n)
 		continue
-	
