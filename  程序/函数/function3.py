@@ -18,7 +18,3 @@ myList = [lambda x:x**2, lambda x:x**3, lambda x:x**4]
 res2 = myList[1]
 
 print res2(4)
-
-dd = myList[0] + myList[1]
-
-print dd

@@ -6,7 +6,7 @@ def func(a):
 
 print func(5)
 
-myFunc = lambda x : if x == 1:
-return 1
+myFunc = lambda x :
+
 
 myFunc(1)
