@@ -36,7 +36,6 @@ class Screen(object):
 s = Screen()
 s.width = 1024
 s.height = 768
-s.resolution  =12
 print('resolution =', s.resolution)
 if s.resolution == 786432:
     print('测试通过!')
